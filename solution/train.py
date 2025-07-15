@@ -33,6 +33,7 @@ optimizer = torch.optim.AdamW(model.parameters(), lr=2e-5)
 
 num_epochs = 5 # Количество эпох
 best_val_acc = 0 # Переменная для хранения лучшего accuracy 
+dict_train = {"avg_train_loss":[],"avg_train_acc":[]}
 
 for epoch in range(num_epochs): # Итерация по эпохам
 
@@ -83,7 +84,9 @@ for epoch in range(num_epochs): # Итерация по эпохам
     
     # Вывод статистики
     avg_train_loss = train_loss / len(train_loader)
+    dict_train['avg_train_loss'].append(avg_train_loss
     avg_train_acc = train_acc / len(train_loader)
+    dict_train['avg_train_acc'].append(avg_train_acc)                                   
     
     print(f"\nEpoch {epoch+1}/{num_epochs}:")
     print(f"Train Loss: {avg_train_loss:.4f} | Acc: {avg_train_acc:.4f}")
