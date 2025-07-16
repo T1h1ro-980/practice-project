@@ -91,7 +91,7 @@ def train_model():
             train_loss += loss.item()
             train_acc += acc.item()
         
-        # Валидация
+        #Валидация
         model.eval()
         
         # Вывод статистики
