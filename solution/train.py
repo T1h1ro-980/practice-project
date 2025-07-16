@@ -33,8 +33,14 @@ pos_weight = torch.tensor([len(train_df)/sum(train_df['Target'])]).to(device)
 criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
 optimizer = torch.optim.AdamW(model.parameters(), lr=2e-5)
 
+<<<<<<< HEAD
 num_epochs = 6 # Количество эпох
 dict_train = {"avg_train_loss":[],"avg_train_acc":[]} # Словарь для хранения статистики обучения
+=======
+num_epochs = 5 # Количество эпох
+best_val_acc = 0 # Переменная для хранения лучшего accuracy 
+dict_train = {"avg_train_loss":[],"avg_train_acc":[]}
+>>>>>>> 3f2e39c229a916e4cb90add799de24d24e8329cc
 
 def train_model():
     """
